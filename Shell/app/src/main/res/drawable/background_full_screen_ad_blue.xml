@@ -1,3 +1,0 @@
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-    android:src="@drawable/ic_full_screen_ad_blue_bg"
-    android:tileMode="repeat" />

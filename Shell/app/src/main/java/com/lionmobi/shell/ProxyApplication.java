@@ -79,15 +79,6 @@ public class ProxyApplication extends Application{
                     wr.get(), dLoader);
 
             Log.i("demo","classloader:"+dLoader);
-
-            try{
-                Object actObj = dLoader.loadClass("com.led_flashlight.notification.activity.MainActivity");
-                Log.i("demo", "actObj:"+actObj);
-            }catch(Exception e){
-                Log.i("demo", "activity:"+Log.getStackTraceString(e));
-            }
-
-
         } catch (Exception e) {
             Log.i("demo", "error:"+Log.getStackTraceString(e));
             e.printStackTrace();

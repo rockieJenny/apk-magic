@@ -12,5 +12,6 @@ public class MainActivity extends Activity {
         /*TextView content = new TextView(this);
         content.setText("damp good!!");*/
         setContentView(R.layout.activity_main);
+        ((TextView)findViewById(R.id.text)).setText(getResources().getString(R.string.damon_good));
     }
 }
