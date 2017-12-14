@@ -1,0 +1,123 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="@android:style/Theme.Light">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="flashlight_style">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground"> @android:color/transparent </item>
+    </style>
+
+    <style name="speed">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style parent="@android:style/Theme.Translucent" name="Transparent">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ProcessCleanDialog" parent="@android:style/Theme.Light">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="dialog_animation">
+        <item name="android:windowEnterAnimation">@anim/in_from_down</item>
+    </style>
+
+    <style name="ShortcutDialogNoBg" parent="android:Theme.Translucent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="ShortcutDialog" parent="android:Theme.Translucent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--自定义滚动尺-->
+    <declare-styleable name="RulerWheel">
+        <!--大号刻度线颜色-->
+        <attr name="lineColorMax" format="color"/>
+        <!--中号刻度线颜色-->
+        <attr name="lineColorMid" format="color"/>
+        <!--小号刻度线颜色-->
+        <attr name="lineColorMin" format="color"/>
+
+        <!--大号刻度线的大小,优先级高于scaleWidth-->
+        <attr name="MaxBarSize" format="dimension"/>
+        <!--中号刻度线的大小,优先级高于scaleWidth-->
+        <attr name="MidBarSize" format="dimension"/>
+        <!--大号刻度线的大小,优先级高于scaleWidth-->
+        <attr name="MinBarSize" format="dimension"/>
+
+
+        <!--是否显示刻度值-->
+        <attr name="showScaleValue" format="boolean"/>
+        <!--是否渐显显示刻度尺-->
+        <attr name="showGradient" format="boolean"/>
+        <!--刻度宽度,所有的都一样大小-->
+        <attr name="scaleWidth" format="dimension"/>
+        <!--刻度左右间距-->
+        <attr name="line_divider" format="dimension"/>
+        <attr name="text_Size" format="integer"/>
+        <attr name="text_color" format="color"/>
+        <attr name="def_value" format="integer"/>
+        <attr name="max_value" format="integer"/>
+        <attr name="min_value" format="integer"/>
+        <attr name="mask_bg" format="reference"/>
+        <!--刻度值渐现-->
+        <attr name="scaleValueGradient" format="boolean"/>
+
+
+        <attr name="mode">
+            <flag name="SCALE" value="0"/>
+            <flag name="HALF" value="1"/>
+        </attr>
+
+        <attr name="dataMode">
+            <flag name="AUTO" value="0" />
+            <flag name="DATA" value="1"/>
+        </attr>
+
+        <attr name="dataSource"  format="reference"/>
+
+
+        <attr name="alignMode">
+            <flag name="UP" value="0"/>
+            <flag name="DOWN" value="1"/>
+        </attr>
+
+    </declare-styleable>
+</resources>

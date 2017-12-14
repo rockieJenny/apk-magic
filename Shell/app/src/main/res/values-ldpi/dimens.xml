@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ll_torch_margin_top">16dp</dimen>
+    <dimen name="ll_torch_top">56dp</dimen>
+    <dimen name="rl_slip_top">56dp</dimen>
+    <dimen name="ad_banner_height">52dp</dimen>
+    <dimen name="ad_banner_marginheight">8dp</dimen>
+    <dimen name="ad_button_margintop">8dp</dimen>
+    <dimen name="ad_text_margintop">2dp</dimen>
+    <dimen name="ad_text_marginbetween">2dp</dimen>
+</resources>

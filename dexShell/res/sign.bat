@@ -1,0 +1,1 @@
+jarsigner -verbose -keystore shell.jks -storepass 123456 -keypass 123456 -sigfile CERT -digestalg SHA1 -sigalg MD5withRSA -signedjar shell_dest.apk shell.apk shell
