@@ -1,22 +1,6 @@
 package com.lionmobi.shell;
 
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
-
 import android.app.Application;
 import android.app.Instrumentation;
 import android.content.Context;
@@ -29,9 +13,25 @@ import android.content.res.Resources.Theme;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.util.Log;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+
 import dalvik.system.DexClassLoader;
 
-public class ProxyApplication extends Application{
+public class ProxyApplication extends Application {
     private static final String appkey = "APPLICATION_CLASS_NAME";
     private String apkFileName;
     private String odexPath;
@@ -49,9 +49,8 @@ public class ProxyApplication extends Application{
             libPath = libs.getAbsolutePath();
             apkFileName = odex.getAbsolutePath() + "/payload.apk";
             File dexFile = new File(apkFileName);
-            Log.i("demo", "apk size:"+dexFile.length());
-            if (!dexFile.exists())
-            {
+            Log.i("demo", "apk size:" + dexFile.length());
+            if (!dexFile.exists()) {
                 dexFile.createNewFile();  //在payload_odex文件夹内，创建payload.apk
                 // 读取程序classes.dex文件
                 byte[] dexdata = this.readDexFileFromApk();
@@ -62,7 +61,7 @@ public class ProxyApplication extends Application{
             // 配置动态加载环境
             Object currentActivityThread = RefInvoke.invokeStaticMethod(
                     "android.app.ActivityThread", "currentActivityThread",
-                    new Class[] {}, new Object[] {});//获取主线程对象 http://blog.csdn.net/myarrow/article/details/14223493
+                    new Class[]{}, new Object[]{});//获取主线程对象 http://blog.csdn.net/myarrow/article/details/14223493
             String packageName = this.getPackageName();//当前apk的包名
             //下面两句不是太理解
             ArrayMap mPackages = (ArrayMap) RefInvoke.getFieldOjbect(
@@ -78,9 +77,9 @@ public class ProxyApplication extends Application{
             RefInvoke.setFieldOjbect("android.app.LoadedApk", "mClassLoader",
                     wr.get(), dLoader);
 
-            Log.i("demo","classloader:"+dLoader);
+            Log.i("demo", "classloader:" + dLoader);
         } catch (Exception e) {
-            Log.i("demo", "error:"+Log.getStackTraceString(e));
+            Log.i("demo", "error:" + Log.getStackTraceString(e));
             e.printStackTrace();
         }
     }
@@ -106,13 +105,13 @@ public class ProxyApplication extends Application{
                     return;
                 }
             } catch (NameNotFoundException e) {
-                Log.i("demo", "error:"+Log.getStackTraceString(e));
+                Log.i("demo", "error:" + Log.getStackTraceString(e));
                 e.printStackTrace();
             }
             //有值的话调用该Applicaiton
             Object currentActivityThread = RefInvoke.invokeStaticMethod(
                     "android.app.ActivityThread", "currentActivityThread",
-                    new Class[] {}, new Object[] {});
+                    new Class[]{}, new Object[]{});
             Object mBoundApplication = RefInvoke.getFieldOjbect(
                     "android.app.ActivityThread", currentActivityThread,
                     "mBoundApplication");
@@ -141,8 +140,8 @@ public class ProxyApplication extends Application{
             appinfo_In_AppBindData.className = appClassName;
             Application app = (Application) RefInvoke.invokeMethod(
                     "android.app.LoadedApk", "makeApplication", loadedApkInfo,
-                    new Class[] { boolean.class, Instrumentation.class },
-                    new Object[] { false, null });//执行 makeApplication（false,null）
+                    new Class[]{boolean.class, Instrumentation.class},
+                    new Object[]{false, null});//执行 makeApplication（false,null）
             RefInvoke.setFieldOjbect("android.app.ActivityThread",
                     "mInitialApplication", currentActivityThread, app);
 
@@ -160,7 +159,7 @@ public class ProxyApplication extends Application{
                         "mContext", localProvider, app);
             }
 
-            Log.i("demo", "app:"+app);
+            Log.i("demo", "app:" + app);
 
             app.onCreate();
         }
@@ -168,6 +167,7 @@ public class ProxyApplication extends Application{
 
     /**
      * 释放被加壳的apk文件，so文件
+     *
      * @param data
      * @throws IOException
      */
@@ -234,6 +234,7 @@ public class ProxyApplication extends Application{
 
     /**
      * 从apk包里面获取dex文件内容（byte）
+     *
      * @return
      * @throws IOException
      */
@@ -266,8 +267,8 @@ public class ProxyApplication extends Application{
 
     // //直接返回数据，读者可以添加自己解密方法
     private byte[] decrypt(byte[] srcdata) {
-        for(int i=0;i<srcdata.length;i++){
-            srcdata[i] = (byte)(0xFF ^ srcdata[i]);
+        for (int i = 0; i < srcdata.length; i++) {
+            srcdata[i] = (byte) (0xFF ^ srcdata[i]);
         }
         return srcdata;
     }
@@ -285,13 +286,13 @@ public class ProxyApplication extends Application{
             addAssetPath.invoke(assetManager, dexPath);
             mAssetManager = assetManager;
         } catch (Exception e) {
-            Log.i("inject", "loadResource error:"+Log.getStackTraceString(e));
+            Log.i("inject", "loadResource error:" + Log.getStackTraceString(e));
             e.printStackTrace();
         }
         Resources superRes = super.getResources();
         superRes.getDisplayMetrics();
         superRes.getConfiguration();
-        mResources = new Resources(mAssetManager, superRes.getDisplayMetrics(),superRes.getConfiguration());
+        mResources = new Resources(mAssetManager, superRes.getDisplayMetrics(), superRes.getConfiguration());
         mTheme = mResources.newTheme();
         mTheme.setTo(super.getTheme());
     }

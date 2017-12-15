@@ -15,6 +15,16 @@ import okio.Okio;
  * Created by hugo on 2014/11/3.
  */
 public class Utils {
+	
+	public static void main(String[] s) {
+		String str = "3f3f7265732f6c61796f75742f6c61796f75745f61646d6f625f616476616e6365645f636f6e74656e745f61645f666f725f657869745f786c617267652e786d6c00";
+		StringBuffer sb = new StringBuffer();
+		for(int i=0;i<str.length()/2;i++) {
+			sb.append((char)Integer.parseInt(str.substring(i*2, (i+1)*2),16));
+		}
+		System.out.println(sb.toString());
+		
+	}
 
     public static boolean PRINT_HEX = true;
     private static int size = 0;

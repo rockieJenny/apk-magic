@@ -9,7 +9,7 @@ import java.util.zip.ZipFile;
 
 public class Copy {
 	static String SRC = "C:\\workbench\\powerlight3";
-	static String DST = "C:\\workbench\\Shell";
+	static String DST = "C:\\workbench\\apk-magic\\Shell";
 	static String RESOURCE = "\\app\\src\\main\\res";
 
 	public static void main(String[] args) throws Exception {

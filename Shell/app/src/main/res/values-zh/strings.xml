@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="old_app_name">手電筒</string>
+    <string name="quithint">再次點擊退出</string>
+    <string name="app_name_suffix">手電筒</string>
+
+    <string name="extend_use_time">手機使用時間+20%</string>
+    <string name="pc_link_txt2">讓你的手機快80%</string>
+
+    <string name="toolbarTips">照亮黑暗</string>
+
+    <string name="settingName">設置</string>
+    <string name="setting_general">通用</string>
+    <string name="setting_language">語言</string>
+    <string name="setting_is_notifi">是否開啟通知欄</string>
+    <string name="dialog_choose_language">選擇語言</string>
+    <string name="setting_is_voice">是否開啟提示聲</string>
+
+    <string name="Clean_Up_Now">立即清理</string>
+    <string name="Junkclean">垃圾清理</string>
+    <string name="draining_apps">耗電的應用程式</string>
+    <string name="save_battery_now">現在節省電量</string>
+    <string name="current">目前</string>
+    <string name="apps_draining_battery">應用程式正在消耗電量</string>
+    <string name="more_details">詳細信息</string>
+    <string name="backgroud_battery_description">背景應用程式正在浪費電量和使用流量.</string>
+    <string name="one_step_saving">一步到位超級省電</string>
+    <string name="extend__battery_use_time">擴展 %1$s 使用時間</string>
+
+    <string name="screen">手機屏幕</string>
+    <string name="not_torch">沒有閃光燈</string>
+    <string name="torch">閃光燈</string>
+    <string name="im_lucky">試試手氣</string>
+    <string name="juck_clean">垃圾清理</string>
+    <string name="battery_saver">節省電量</string>
+
+    <string name="ad_result_failure">服務器連接失敗</string>
+
+    <string name="ad_pc_body">瞬間打開電筒，\n尋路途中無需等待</string>
+
+    <string name="ad_pb_body">优化能耗，\n电筒常亮更持久.</string>
+    <string name="ad_action">試一試</string>
+
+    <string name="text_on_upper">開啟</string>
+    <string name="text_off_upper">關閉</string>
+    <string name="screen_flash_page_title">電話閃屏</string>
+    <string name="text_led_streamer">流水燈</string>
+    <string name="text_led_bloom">綻放</string>
+    <string name="text_led_gradient">漸變</string>
+    <string name="text_led_neon">霓虹燈</string>
+    <string name="text_led_intro">試一試電話閃屏，也許你會喜歡!</string>
+    <string name="text_led_intro_title">大部份用戶都很喜歡此項功能，不妨試一試!</string>
+    <string name="text_led_intro_call_flash">電話閃屏</string>
+    <string name="text_no_thanks">不，謝謝!</string>
+    <string name="text_contact_unknown">未知聯絡人</string>
+    <string name="text_contact_unknown_number">未知號碼</string>
+    <string name="text_cancel_upper">取消</string>
+    <string name="text_open_upper">開啟</string>
+    <string name="text_call_flash_exit_dialog_title">開啟通話閃屏</string>
+    <string name="text_call_flash_exit_dialog_content">您還未開啟通話閃屏功能，此項功能將在來電的時候給您提供有趣的來電畫面，是否現在開啟？</string>
+
+    <string name="smartlock_title">智能鎖屏</string>
+    <string name="smartlock_setting_tips">在鎖屏狀態下顯示精美壁紙(包含廣告)</string>
+    <string name="smartlock_open_title">開啟智能鎖屏</string>
+    <string name="smart_lock_full_content1">實時顯示充電狀態</string>
+    <string name="smart_lock_full_content2">估算充電完成時間</string>
+    <string name="smart_lock_full_content3">提供優化建議</string>
+    <string name="smart_lock_ad_notice">包含廣告</string>
+    <string name="smart_lock_open">立即開啟</string>
+
+    <string name="disable">停用</string>
+    <string name="enable">啟用</string>
+    <string name="quick_charge_title1">充電完成 預計時間</string>
+    <string name="quick_charge_title2">連續充電 預估時間</string>
+    <string name="quick_charge_title3">涓流保養 預估時間</string>
+    <string name="disable_smartlock_dialog_des">"停用將無法再及時檢查裝置狀態。
+        確定停用？"</string>
+    <string name="cancel">暫不處理</string>
+    <string name="quick_charge_time_remaining">@string/quick_charge_title2</string>
+    <string name="charging_current_time">於%1$s%2$s完成充電, 請拔掉充電器.</string>
+    <string name="charging_time_consuming">充滿電池 剩餘時間</string>
+    <string name="activity_main_complete">充電結束</string>
+    <string name="main_text_hour_unit">時</string>
+    <string name="main_text_minute_unit">分</string>
+    <string name="activity_charge_mode_one">快速充電</string>
+    <string name="activity_charge_mode_continuous">持續充電</string>
+    <string name="activity_charge_mode_trickle">涓流充電</string>
+    <string name="charging_tip1">後台耗電程式自動攔截中</string>
+    <string name="more">More</string>
+    <string name="charging_slide_unlock">滑動解鎖</string>
+    <string name="speed_charge_toast">當低於80% 對電池進行快速充電。</string>
+    <string name="continuous_charge_toast">慢速充電,以確保電池達到最大容量。</string>
+    <string name="trickle_charge_toast">涓流式充電15分鐘,有助於延長電池壽命。</string>
+
+    <string name="current_capacity">當前:</string>
+    <string name="text_loading">加載中 ...</string>
+
+    <string name="exit_dialog_smartlock_quit">暫不處理</string>
+    <string name="exit_dialog_smartlock_open">開啟</string>
+    <string name="exit_dialog_smartlock_content">開啟智能鎖屏，在充電過程中自動檢查裝置狀態並提供優化建議(包含廣告)</string>
+    <string name="smart_lock_content_for_setting_exit">您還未開啟智能鎖屏，該功能在充電過程中自動檢查裝置狀態並提供優化建議，是否現在開啟？(包含廣告)</string>
+    <string name="exit_dialog_smartlock_title">智能鎖屏</string>
+    <string name="smart_lock_open_success">成功開啟智能鎖屏!</string>
+
+    <string name="led_flash_page_title">LED來電閃爍</string>
+    <string name="screen_light_guide">滑動調節屏幕亮度</string>
+
+    <string name="uninstalled_app">已卸載程式</string>
+    <string name="page_title_battery_saver">電池耗電狀態</string>
+
+    <string name="text_downloading">下載中...</string>
+    <string name="text_download_fail">當前壁紙下載失敗</string>
+    <string name="text_reload">重新加載</string>
+    <string name="text_download">下載</string>
+    <string name="page_title_wallpaper">屏幕壁紙</string>
+    <string name="setting_title_wallpaper">選擇壁紙</string>
+    <string name="disable_lockscreen_content">將不再提供鎖屏服務?</string>
+    <string name="onlythistime">僅此一次</string>
+    <string name="always">總是</string>
+    <string name="toast_tips_network_error">網絡故障，請稍後再試!</string>
+    <string name="text_continue_upper">繼續</string>
+    <string name="dialog_not_wifi_title">溫馨提示</string>
+    <string name="dialog_not_wifi_content">當前設備沒有連接到WiFi網絡，是否確定繼續下載？</string>
+    <string name="dialog_not_wifi_left">@string/text_cancel_upper</string>
+    <string name="dialog_not_wifi_right">@string/text_continue_upper</string>
+    <string name="toast_tips_start_download">開始下載壁紙!</string>
+    <string name="dialog_smart_lock_intro">您還沒有開啟智能鎖屏, 該功能會在鎖屏界面顯示精美壁紙(包含廣告), 是否立即開啟?</string>
+
+    <string name="screen_flash_msg_page_title">短消息閃屏</string>
+    <string name="message_flash_default_show">這個春天很美好，我們去感受一下那里的微風吧!</string>
+    <string name="message_flash_check">查看</string>
+    <string name="message_flash_demo_title_desc">短消息</string>
+    <string name="message_flash_demo_title_desc1">現在</string>
+    <string name="message_flash_slide_to_unlock">滑動解鎖</string>
+    <string name="message_flash_demo_contact_name">123-4567-8901</string>
+    <string name="dialog_message_close_tips">不再顯示當前頁面？</string>
+    <string name="dialog_message_flash_show_intro">您還未開啟短消息閃屏功能，此項功能將在收到短消息的時候給您提供有趣的提示畫面(包含廣告)，是否現在開啟？</string>
+
+    <!--apk clean junk start-->
+    <string name="ad_switch_uninstall_clean_junk">殘留清理</string>
+    <string name="ad_switch_uninstall_dialog_title">卸載殘留</string>
+    <string name="ad_switch_uninstall_dialog_content">正在清理 &lt;font color=&quot;#31AA52&quot;&gt;%1$s&lt;/font&gt; 卸載殘留</string>
+    <!--apk clean junk edn-->
+
+    <!--shortcut boost start-->
+    <string name="best_performance">最佳狀態</string>
+    <string name="scanning">正在掃描...</string>
+    <string name="start_clean">開始清理</string>
+    <string name="promotion">速度提升</string>
+    <string name="boost">加速</string>
+    <string name="add_shortcut">快捷方式</string>
+    <string name="add_shortcut_success">創建成功,開啟桌面一鍵加速和裝置降溫</string>
+    <string name="cooler">降溫</string>
+    <!--shortcut boost end-->
+
+    <string name="text_button_call_flash">電話閃屏</string>
+    <string name="text_button_wallpaper">锁屏壁纸</string>
+    <string name="text_button_msg_flash">消息閃屏</string>
+    <string name="setting_recommended">推薦</string>
+
+    <string name="guide_access_permission_title">體驗強力加速</string>
+    <string name="guide_access_permission_content">體驗30%+的性能提升, 請授予一項通用權限</string>
+    <string name="guide_access_permission_action">立即體驗</string>
+    <string name="enable_access_permission_suc_tips">授權成功,系統性能可以提升30%+</string>
+    <string name="button_confirm">確認</string>
+    <string name="guide_authority_text">請滑動到LED Flashlight并授權，當前操作不會收集任何用戶數據!</string>
+    <string name="guide_power_boost_title">強力加速</string>
+
+    <string name="text_about">關於</string>
+    <string name="text_about_us_title">關於我們</string>
+    <string name="about_us_privacy_policy">隱私政策</string>
+    <string name="about_us_terms_of_use">使用條款</string>
+</resources>

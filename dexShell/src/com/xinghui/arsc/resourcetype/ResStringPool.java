@@ -88,7 +88,9 @@ public class ResStringPool {
     }
 
     private void readString(BufferedSource source, ResStringPool_header mStringPoolHeader, ArrayList<String> string_pool_list, int[] mStringOffsets) throws IOException {
-        int size = ((mStringPoolHeader.getStylesStart() == 0) ? mStringPoolHeader.getHeader().getSize() : mStringPoolHeader.getStylesStart()) - mStringPoolHeader.getStringsStart();
+        int size = ((mStringPoolHeader.getStylesStart() == 0) ? 
+        			mStringPoolHeader.getHeader().getSize() : 
+        			mStringPoolHeader.getStylesStart()) - mStringPoolHeader.getStringsStart();
         System.out.println("----++--size = " + size);
         if (size % 4 != 0) {
             throw new AssertionError("String data size is not multiple of 4 (" + size + ").");
@@ -149,7 +151,7 @@ public class ResStringPool {
         for (int i = 0; i < mStringPoolHeader.getStringCount(); i++) {
             short wordLength = Utils.readShort("wordLength: ", source);
             if (wordLength < 0) {
-                throw new IOException("String Pool Word Length < 0, the value is " + wordLength);
+               // throw new IOException("String Pool Word Length < 0, the value is " + wordLength);
             }
             if (mStringPoolHeader.isUTF8()) {
 

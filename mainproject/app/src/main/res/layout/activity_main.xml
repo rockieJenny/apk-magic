@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/colorPrimary"
+    tools:context="com.lionmobi.mainproject.MainActivity">
 
     <TextView
         android:id="@+id/text"
-        android:textSize="100sp"
+        android:fontFamily="sans-serif"
         android:textColor="#fff"
+        android:textSize="40sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/origin_good"/>
+        android:text="Hello World!"/>
 
 </LinearLayout>

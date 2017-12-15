@@ -184,7 +184,7 @@ public class ArscDecoder {
         FileInputStream is;
         try {
 //            is = new FileInputStream("F:\\Android\\android-studio\\workspace\\ArscDecoder\\arsc\\res\\resources.arsc");// UTF-16
-            is = new FileInputStream("C:\\Users\\rockie\\eclipse-workspace\\dexShell\\res\\shell_dest\\resources.arsc");// UTF-8
+            is = new FileInputStream("C:\\workbench\\apk-magic\\dexShell\\res\\resources.arsc");// UTF-8
 
             ge.decodeArsc(is);
 //            Utils.printFileByte(is);
