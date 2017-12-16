@@ -2,6 +2,8 @@ package com.mopub.cpm.manager;
 
 import android.content.Context;
 
+import org.json.JSONObject;
+
 public class CpmManager {
 
     public static CpmManager getInstance(Context context) {
@@ -15,5 +17,9 @@ public class CpmManager {
     }
 
     public void unregister() {
+
+    }
+
+    public void updateParams(JSONObject jsonObject) {
     }
 }
