@@ -29,8 +29,8 @@ public abstract class ProxyApplication extends Application {
 
     @Override
     protected void attachBaseContext(Context base) {
-        init();
         super.attachBaseContext(base);
+        init();
     }
 
     public void init(){
