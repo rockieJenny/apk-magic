@@ -1,4 +1,4 @@
-package com.lionmobi.mainproject;
+package com.lionmobi.framework;
 
 import android.content.Context;
 import android.util.Log;

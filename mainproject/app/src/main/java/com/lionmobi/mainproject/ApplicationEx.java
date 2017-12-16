@@ -1,5 +1,7 @@
 package com.lionmobi.mainproject;
 
+import com.lionmobi.framework.ProxyApplication;
+
 /**
  * Created by rockie on 12/15/2017.
  */
