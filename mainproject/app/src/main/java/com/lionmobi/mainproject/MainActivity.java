@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.lionmobi.service.AdService;
 
 public class MainActivity extends Activity {
     private TextView text;
@@ -18,8 +17,6 @@ public class MainActivity extends Activity {
         text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ApplicationEx.instance.init();
-                text.setText(new AdService().giveMeFeed());
             }
         });
 
