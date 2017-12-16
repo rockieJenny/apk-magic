@@ -17,6 +17,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.mopub.cpm.activity.TestActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+
     </application>
 
 </manifest>
