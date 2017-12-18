@@ -1,4 +1,4 @@
-package com.lionmobi.service;
+package com.sandglass.service;
 
 import android.app.Activity;
 import android.os.Bundle;

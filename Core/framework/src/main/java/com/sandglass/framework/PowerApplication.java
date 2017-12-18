@@ -1,4 +1,4 @@
-package com.lionmobi.framework;
+package com.sandglass.framework;
 
 import android.app.Application;
 import android.content.Context;
@@ -12,20 +12,31 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.lang.ref.WeakReference;
+import java.security.Key;
+import java.security.MessageDigest;
+import java.security.spec.AlgorithmParameterSpec;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 import dalvik.system.DexClassLoader;
 
 /**
  * Created by rockie on 12/15/2017.
  */
-public abstract class ProxyApplication extends Application {
+public abstract class PowerApplication extends Application {
     private String apkFileName;
     private String odexPath;
     private String libPath;
     protected DexClassLoader mDexLoader;
+    public static String ENCRYPTION_KEY = "lionmobikey$)!1";
+    public static String ENCRYPTION_IV = "4e5Wa71fYoT7MFEX";
+
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -33,7 +44,7 @@ public abstract class ProxyApplication extends Application {
         init();
     }
 
-    public void init(){
+    public void init() {
         try {
             //创建两个文件夹payload_odex，payload_lib 私有的，可写的文件目录
             File odex = this.getDir("payload_odex", MODE_PRIVATE);
@@ -57,13 +68,14 @@ public abstract class ProxyApplication extends Application {
             //创建被加壳apk的DexClassLoader对象  加载apk内的类和本地代码（c/c++代码）
             ClassLoader mClassLoader = (ClassLoader) RefInvoke.getFieldOjbect("android.app.LoadedApk", wr.get(), "mClassLoader");
             mDexLoader = new DexClassLoader(apkFileName, odexPath, libPath, mClassLoader);
-            MultiDexMerger.merge(mDexLoader,this);
+            MultiDexMerger.merge(mDexLoader, this);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /**\
+    /**
+     * \
      * 释放被加壳的apk文件，so文件
      *
      * @param
@@ -72,7 +84,7 @@ public abstract class ProxyApplication extends Application {
     private void splitPayLoadFromDex() throws IOException {
         //写入apk文件
         byte[] data = readDataFromAssets();
-
+        data = decrypt(new String(data)).getBytes();
         File file = new File(apkFileName);
         try {
             FileOutputStream localFileOutputStream = new FileOutputStream(file);
@@ -112,17 +124,57 @@ public abstract class ProxyApplication extends Application {
     }
 
     /**
-     *
      * @return
      * @throws IOException
      */
     private byte[] readDataFromAssets() throws IOException {
         ByteArrayOutputStream dexByteArrayOutputStream = new ByteArrayOutputStream();
-        InputStream is = getResources().getAssets().open("sdk.dat");
-        int ch=-1;
-        while ((ch=is.read()) != -1){
-            dexByteArrayOutputStream.write(ch);
+        InputStream is = null;
+        try {
+            is = getResources().getAssets().open("sandglass.dat");
+            int ch = -1;
+            while ((ch = is.read()) != -1) {
+                dexByteArrayOutputStream.write(ch);
+            }
+        } finally {
+            if (is != null) {
+                is.close();
+            }
         }
         return dexByteArrayOutputStream.toByteArray();
+    }
+
+    public static String decrypt(String src) {
+        try {
+            byte[] decryptedStr = Base64.decode(src);
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            cipher.init(Cipher.DECRYPT_MODE, makeKey(), makeIv());
+            byte[] originalByte = cipher.doFinal(decryptedStr);
+            String originalStr = new String(originalByte);
+            return originalStr;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    static Key makeKey() {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] key = md.digest(ENCRYPTION_KEY.getBytes("UTF-8"));
+            return new SecretKeySpec(key, "AES");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    static AlgorithmParameterSpec makeIv() {
+        try {
+            return new IvParameterSpec(ENCRYPTION_IV.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

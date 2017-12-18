@@ -1,4 +1,4 @@
-package com.lionmobi.framework;
+package com.sandglass.framework;
 
 import android.content.Context;
 import android.util.Log;
